@@ -21,7 +21,8 @@
         <activity android:name=".RestaurantMenuActivity" />
         <activity android:name=".PaymentActivity" />
         <activity android:name=".DriverActivity" />
-        <activity android:name=".RestaurantReviewActivity"></activity>
+        <activity android:name=".RestaurantReviewActivity" />
+        <activity android:name=".RestaurantActivity"></activity>
     </application>
 
 </manifest>
