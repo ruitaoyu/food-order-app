@@ -4,15 +4,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 /**
- * The homepage for when a restaurant/food worker logs in.
+ * The landing page for when a driver logs in where he/she will get orders.
  */
-public class RestaurantActivity extends AppCompatActivity {
-
-    // no extras out
+public class DriverHomepageActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_restaurant);
+        setContentView(R.layout.activity_driver);
     }
 }

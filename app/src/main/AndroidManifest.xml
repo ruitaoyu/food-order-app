@@ -16,13 +16,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".NewUserActivity" />
+        <activity android:name=".CreateNewUserActivity" />
         <activity android:name=".FoodStoreSearchActivity" />
         <activity android:name=".RestaurantMenuActivity" />
         <activity android:name=".PaymentActivity" />
-        <activity android:name=".DriverActivity" />
+        <activity android:name=".DriverHomepageActivity" />
         <activity android:name=".RestaurantReviewActivity" />
-        <activity android:name=".RestaurantActivity"></activity>
+        <activity android:name=".RestaurantHomepageActivity"></activity>
     </application>
 
 </manifest>

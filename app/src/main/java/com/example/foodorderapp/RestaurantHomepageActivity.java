@@ -4,16 +4,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 /**
- * Activity to create a new user and select between if the account is a driver account or a customer
- * account.
+ * The homepage for when a restaurant/food worker logs in.
  */
-public class NewUserActivity extends AppCompatActivity {
+public class RestaurantHomepageActivity extends AppCompatActivity {
 
     // no extras out
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_user);
+        setContentView(R.layout.activity_restaurant);
     }
 }
