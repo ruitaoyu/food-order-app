@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -371,13 +372,19 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     public void signIn(View view) {
         SharedPreferences sharedPref = getSharedPreferences("mySettings", Context.MODE_PRIVATE);
         String password = sharedPref.getString(mEmailView.getText().toString(), null);
-        // We have an account with that matching password
-        if (password != null && password.equals(mPasswordView.getText().toString())) {
+
+        if (!isEmailValid(mEmailView.getText().toString())) {
+            // Email is not valid, display error
+            mEmailView.setError(getString(R.string.error_invalid_email));
+            mEmailView.requestFocus();
+        } else if (password != null && password.equals(mPasswordView.getText().toString())) {
+            // We have an account with that matching password
             Intent intent = new Intent(this, FoodStoreSearchActivity.class);
             startActivity(intent);
         } else {
             mNotificationView.setVisibility(View.VISIBLE);
-            mNotificationView.setText("INVALID LOGIN");
+            mNotificationView.setText("INVALID CREDENTIALS");
+            mNotificationView.setBackgroundColor(Color.RED);
         }
     }
 }
