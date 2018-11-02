@@ -27,8 +27,8 @@ public class CreateNewUserActivity extends AppCompatActivity {
 
     public void createAccount(View view) {
         // Get the text values
-        TextView email = (TextView) findViewById(R.id.email);
-        TextView password = (TextView) findViewById(R.id.password);
+        TextView email = findViewById(R.id.email);
+        TextView password = findViewById(R.id.password);
 
         String newEmail = email.getText().toString();
         String newPassword = password.getText().toString();
@@ -37,10 +37,10 @@ public class CreateNewUserActivity extends AppCompatActivity {
         SharedPreferences sharedPref = getSharedPreferences("mySettings", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putString(newEmail, newPassword);
-        editor.commit();
+        editor.apply();
 
         Intent intent = new Intent(this, LoginActivity.class);
-        intent.putExtra(EXTRA_ACCOUNT_CREATED, "Account created!");
+        intent.putExtra(EXTRA_ACCOUNT_CREATED, EXTRA_ACCOUNT_CREATED);
         startActivity(intent);
     }
 }
