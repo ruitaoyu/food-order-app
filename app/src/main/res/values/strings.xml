@@ -16,4 +16,5 @@
     <string name="action_register">Register</string>
     <string name="action_create_new_account">Create New Account</string>
     <string name="invalid_credentials">INVALID CREDENTIALS</string>
+    <string name="title_activity_enter_location">Enter Location</string>
 </resources>

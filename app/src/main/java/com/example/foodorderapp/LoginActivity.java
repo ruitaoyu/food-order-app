@@ -29,7 +29,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.login);
         // Set up the login form.
         mEmailView = findViewById(R.id.email);
         mPasswordView = findViewById(R.id.password);
@@ -41,6 +41,7 @@ public class LoginActivity extends AppCompatActivity {
 
         if (message != null) {
             mNotificationView.setVisibility(View.VISIBLE);
+            mNotificationView.setTextColor(Color.GREEN);
             mNotificationView.setText(message);
         }
     }
@@ -65,13 +66,13 @@ public class LoginActivity extends AppCompatActivity {
             mEmailView.requestFocus();
         } else if (password != null && password.equals(mPasswordView.getText().toString())) {
             // We have an account with that matching password
-            Intent intent = new Intent(this, FoodStoreSearchActivity.class);
+            Intent intent = new Intent(this, EnterLocationActivity.class);
             intent.putExtra(FROM_HOMEPAGE, FROM_HOMEPAGE);
             startActivity(intent);
         } else {
             mNotificationView.setVisibility(View.VISIBLE);
             mNotificationView.setText(R.string.invalid_credentials);
-            mNotificationView.setBackgroundColor(Color.RED);
+            mNotificationView.setTextColor(Color.RED);
         }
     }
 }

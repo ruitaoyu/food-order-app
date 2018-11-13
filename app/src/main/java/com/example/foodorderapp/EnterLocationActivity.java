@@ -1,22 +1,26 @@
 package com.example.foodorderapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 /**
  * Search all registered stores based on food or store name.
  */
-public class FoodStoreSearchActivity extends AppCompatActivity {
+public class EnterLocationActivity extends AppCompatActivity {
 
     // The store the person selected (which will then be passed to RestaurantMenuActivity).
     public static final String EXTRA_STORE_NAME = "com.example.foodorderapp.STORE_NAME";
 
+    public static final String ADDRESS = "com.example.foodorderapp.ADDRESS";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_food_store_search);
+        setContentView(R.layout.food_store_search);
 
 
         Spinner dropdown = findViewById(R.id.stateSpinner);
@@ -33,6 +37,11 @@ public class FoodStoreSearchActivity extends AppCompatActivity {
 
 
         dropdown.setAdapter(adapter);
+    }
 
+    public void searchAddress(View view) {
+        Intent intent = new Intent(this, NearbyRestaurantsActivity.class);
+//        intent.putExtra(ADDRESS, ((EditText)findViewById(R.id.addressOneEditText)).getText());
+        startActivity(intent);
     }
 }

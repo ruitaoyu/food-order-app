@@ -12,6 +12,6 @@ public class RestaurantReviewActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_restaurant_review);
+        setContentView(R.layout.restaurant_review);
     }
 }
